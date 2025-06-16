@@ -1,4 +1,3 @@
-/* === Kalkulyator Wrapper === */
 .calculator-wrapper {
   display: flex;
   justify-content: center;
@@ -8,7 +7,6 @@
   transition: background-color 0.3s ease;
 }
 
-/* === Kalkulyator Konteyneri === */
 .calculator {
   max-width: 380px;
   width: 100%;
@@ -23,7 +21,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* === Input === */
 .calculator-input {
   font-size: 2rem;
   padding: 1rem;
@@ -37,7 +34,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* === Tugmalar Raqamlari === */
 .calculator-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -67,7 +63,6 @@
   transform: scale(1.05);
 }
 
-/* === Maxsus Tugmalar === */
 .calculator-buttons .clear {
   background-color: #f44336;
   color: white;
@@ -84,12 +79,10 @@
   background-color: #388e3c;
 }
 
-/* === Nol tugmasi kengaytirilgan === */
 .calculator-buttons .zero {
   grid-column: span 2;
 }
 
-/* === Tarix === */
 .history {
   margin-top: 1.5rem;
   padding: 1rem;
@@ -143,7 +136,6 @@ body.dark {
   --button-hover: #444;
 }
 
-/* === Animatsiya === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -155,7 +147,6 @@ body.dark {
   }
 }
 
-/* === Responsiv Dizayn === */
 @media (max-width: 480px) {
   .calculator {
     margin: 1rem;

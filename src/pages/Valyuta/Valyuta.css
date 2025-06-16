@@ -134,7 +134,6 @@ body.dark {
   --button-hover: #444;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .converter-container {
     margin: 2rem 1rem;

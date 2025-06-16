@@ -94,7 +94,7 @@ const Kalkulyator = () => {
           </button>
         </div>
 
-        {/* Optional: Show History */}
+        {/* TARIXI */}
         <div className='calculator-history'>
           {history.map((item, i) => (
             <div key={i} className='history-item'>

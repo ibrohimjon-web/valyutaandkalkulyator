@@ -4,21 +4,18 @@
   --font-weight: bold;
 }
 
-/* Light theme - faqat navbar */
 .navbar.light {
   --bg: #ffffff;
   --text: #222222;
   --bg-nav: #000000;
 }
 
-/* Dark theme - faqat navbar */
 .navbar.dark {
   --bg: #111111;
   --text: #eeeeee;
   --bg-nav: #ffffff;
 }
 
-/* Navbar asosiy container */
 .navbar {
   width: 100%;
   background-color: var(--bg);
@@ -40,7 +37,6 @@
   margin: auto;
 }
 
-/* Logo */
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
@@ -48,7 +44,6 @@
   color: var(--text);
 }
 
-/* Theme toggle button */
 .theme-toggle {
   border: none;
   padding: 6px 12px;
@@ -63,7 +58,6 @@
   background-color: #357abd;
 }
 
-/* Navigatsiya linklar (desktop) */
 .links {
   display: flex;
   gap: 24px;
@@ -82,11 +76,10 @@
   color: var(--accent);
 }
 
-/* Aktiv link ostiga chiziq */
 .linka.active::after {
   content: '';
   position: absolute;
-  bottom: -10px; /* tagidan biroz past */
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -101,7 +94,6 @@
   font-weight: var(--font-weight);
 }
 
-/* ✅ Mobil versiyada pastki navbar */
 @media (max-width: 768px) {
   .links {
     position: fixed;
