@@ -31,12 +31,6 @@ body.dark {
   --text-secondary: #bbbbbb;
 }
 
-@media (max-width: 768px) {
-  .footer {
-    margin-bottom: 55px;
-  }
-}
-
 /* Responsive */
 @media (max-width: 480px) {
   .footer {
