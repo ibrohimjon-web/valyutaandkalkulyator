@@ -1,0 +1,174 @@
+/* Wrapper for centering */
+.calculator-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 1rem;
+}
+
+/* Main calculator container */
+.calculator {
+  max-width: 380px;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeInUp 0.5s ease forwards;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Input display */
+.calculator-input {
+  font-size: 2rem;
+  padding: 1rem;
+  border: none;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 12px;
+  text-align: right;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Buttons layout */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* All buttons */
+.calculator-buttons button {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* On hover */
+.calculator-buttons button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* On key press (animation class from JS) */
+.calculator .active {
+  background-color: #00bcd4 !important;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Special buttons */
+.calculator-buttons .clear {
+  background-color: #f44336;
+  color: white;
+}
+.calculator-buttons .clear:hover {
+  background-color: #d32f2f;
+}
+
+.calculator-buttons .equal {
+  background-color: #4caf50;
+  color: white;
+}
+.calculator-buttons .equal:hover {
+  background-color: #388e3c;
+}
+
+/* 0 button spans 2 columns */
+.calculator-buttons .zero {
+  grid-column: span 2;
+}
+
+/* Calculation history */
+.history {
+  margin-top: 20px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 10px;
+  max-width: 320px;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.history h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.history ul {
+  list-style: none;
+  padding-left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history li {
+  margin-bottom: 5px;
+  border-bottom: 1px dashed #555;
+  padding-bottom: 4px;
+}
+
+/* Light theme */
+body.light {
+  --bg-primary: #ffffff;
+  --text-primary: #222;
+  --bg-secondary: #f9f9f9;
+  --button-bg: #e0e0e0;
+  --button-text: #333;
+  --button-hover: #d5d5d5;
+}
+
+/* Dark theme */
+body.dark {
+  --bg-primary: #121212;
+  --text-primary: #f1f1f1;
+  --bg-secondary: #1e1e1e;
+  --button-bg: #333;
+  --button-text: #f1f1f1;
+  --button-hover: #444;
+}
+
+/* Keyframe for opening animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .calculator {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .calculator-input {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  .calculator-buttons button {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .history {
+    font-size: 0.85rem;
+  }
+}
