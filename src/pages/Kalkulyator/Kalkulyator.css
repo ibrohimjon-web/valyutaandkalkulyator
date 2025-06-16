@@ -1,28 +1,29 @@
-/* Wrapper for centering */
+/* === Kalkulyator Wrapper === */
 .calculator-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 70vh;
   padding: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Main calculator container */
+/* === Kalkulyator Konteyneri === */
 .calculator {
   max-width: 380px;
   width: 100%;
   background-color: var(--bg-secondary);
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  animation: fadeInUp 0.5s ease forwards;
-  transition: background 0.3s ease, color 0.3s ease;
+  animation: fadeInUp 0.4s ease forwards;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Input display */
+/* === Input === */
 .calculator-input {
   font-size: 2rem;
   padding: 1rem;
@@ -31,18 +32,18 @@
   color: var(--text-primary);
   border-radius: 12px;
   text-align: right;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
   outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Buttons layout */
+/* === Tugmalar Raqamlari === */
 .calculator-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
-/* All buttons */
 .calculator-buttons button {
   font-size: 1.5rem;
   padding: 1rem;
@@ -51,23 +52,22 @@
   background-color: var(--button-bg);
   color: var(--button-text);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, background-color 0.25s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* On hover */
 .calculator-buttons button:hover {
   background-color: var(--button-hover);
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
-/* On key press (animation class from JS) */
 .calculator .active {
   background-color: #00bcd4 !important;
   color: white;
   transform: scale(1.05);
 }
 
-/* Special buttons */
+/* === Maxsus Tugmalar === */
 .calculator-buttons .clear {
   background-color: #f44336;
   color: white;
@@ -84,26 +84,29 @@
   background-color: #388e3c;
 }
 
-/* 0 button spans 2 columns */
+/* === Nol tugmasi kengaytirilgan === */
 .calculator-buttons .zero {
   grid-column: span 2;
 }
 
-/* Calculation history */
+/* === Tarix === */
 .history {
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 1.5rem;
+  padding: 1rem;
   background: var(--bg-secondary);
   color: var(--text-primary);
   border-radius: 10px;
   max-width: 320px;
   width: 100%;
   font-size: 0.95rem;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 .history h3 {
   margin-bottom: 10px;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .history ul {
@@ -111,15 +114,16 @@
   padding-left: 0;
   max-height: 200px;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .history li {
   margin-bottom: 5px;
-  border-bottom: 1px dashed #555;
+  border-bottom: 1px dashed #666;
   padding-bottom: 4px;
 }
 
-/* Light theme */
+/* === Light Theme === */
 body.light {
   --bg-primary: #ffffff;
   --text-primary: #222;
@@ -129,21 +133,21 @@ body.light {
   --button-hover: #d5d5d5;
 }
 
-/* Dark theme */
+/* === Dark Theme === */
 body.dark {
   --bg-primary: #121212;
   --text-primary: #f1f1f1;
   --bg-secondary: #1e1e1e;
-  --button-bg: #333;
+  --button-bg: #2c2c2c;
   --button-text: #f1f1f1;
   --button-hover: #444;
 }
 
-/* Keyframe for opening animation */
+/* === Animatsiya === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -151,15 +155,15 @@ body.dark {
   }
 }
 
-/* Responsive */
+/* === Responsiv Dizayn === */
 @media (max-width: 480px) {
   .calculator {
-    margin: 2rem 1rem;
+    margin: 1rem;
     padding: 1.5rem;
   }
 
   .calculator-input {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding: 0.8rem;
   }
 
@@ -170,5 +174,6 @@ body.dark {
 
   .history {
     font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }

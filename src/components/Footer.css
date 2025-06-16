@@ -1,7 +1,6 @@
 .footer {
   text-align: center;
   padding: 1rem 0;
-  background-color: var(--bg-secondary);
   color: var(--text-secondary);
   font-size: 0.9rem;
   transition: background 0.3s ease, color 0.3s ease;

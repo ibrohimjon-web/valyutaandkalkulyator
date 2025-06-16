@@ -4,6 +4,11 @@ import './Kalkulyator.css';
 const Kalkulyator = () => {
   const [input, setInput] = useState('');
   const [activeKey, setActiveKey] = useState(null);
+  const [history, setHistory] = useState([]);
+
+  const replaceSymbols = (str) => {
+    return str.replace(/÷/g, '/').replace(/×/g, '*').replace(/−/g, '-');
+  };
 
   const handleClick = (value) => {
     setInput((prev) => prev + value);
@@ -14,7 +19,8 @@ const Kalkulyator = () => {
 
   const handleEqual = () => {
     try {
-      const result = eval(input).toString();
+      const expression = replaceSymbols(input);
+      const result = eval(expression).toString();
       setInput(result);
       setHistory((prev) => [...prev, `${input} = ${result}`]);
     } catch {
@@ -22,7 +28,6 @@ const Kalkulyator = () => {
     }
   };
 
-  // Keyboard event
   useEffect(() => {
     const handleKeyDown = (e) => {
       const key = e.key;
@@ -60,17 +65,17 @@ const Kalkulyator = () => {
           </button>
           <button onClick={handleBackspace}>⌫</button>
           {renderButton('%')}
-          {renderButton('÷', '/')}
+          {renderButton('÷')}
 
           {renderButton('7')}
           {renderButton('8')}
           {renderButton('9')}
-          {renderButton('×', '*')}
+          {renderButton('×')}
 
           {renderButton('4')}
           {renderButton('5')}
           {renderButton('6')}
-          {renderButton('−', '-')}
+          {renderButton('−')}
 
           {renderButton('1')}
           {renderButton('2')}
@@ -87,6 +92,15 @@ const Kalkulyator = () => {
           <button onClick={handleEqual} className='equal'>
             =
           </button>
+        </div>
+
+        {/* Optional: Show History */}
+        <div className='calculator-history'>
+          {history.map((item, i) => (
+            <div key={i} className='history-item'>
+              {item}
+            </div>
+          ))}
         </div>
       </div>
     </div>
